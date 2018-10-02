@@ -14,6 +14,8 @@ sub mux_input {
     
     my ($uuid, $taskId) = split(/,/,$inputData);
     $currentProcess{$uuid}{'status'} = 0;
+    print executeTask($taskId);
+
     if ($inputData eq 'close') {
         close(STDOUT);
     } 
@@ -34,7 +36,10 @@ sub getTaskStatus {
 }
 
 sub executeTask {
-
+    my ($self, $taskId) = @_;
+    if ($taskId == 0) {
+        return getCurrentLoad();
+    }
 }
 
 sub cleanUpProcess {

@@ -20,7 +20,7 @@ our %hosts = ( #TODO: Move this structure to a config file
         host => "localhost:2023",
         load => 0.01,
         tasks => {}
-    }
+    } 
 );
 
 sub mux_input {
